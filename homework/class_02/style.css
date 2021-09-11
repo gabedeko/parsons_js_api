@@ -1,0 +1,11 @@
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.inline {
+    display: inline;
+}
+
+div {
+    margin: 1em 0;
+}
