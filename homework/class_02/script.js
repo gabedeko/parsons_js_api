@@ -16,7 +16,7 @@ btn6.addEventListener('click', question6);
 
 
 function question1() {
-    let x = Math.floor(1000 * Math.random());
+    let x = Math.floor(9999 * Math.random());
 
     if (x % 2) {
         console.log("the number " + x + " is odd");
@@ -86,9 +86,13 @@ function question4() {
     x = Math.ceil( Math.random() * 9 );
 
     console.log("Factorial of " + x);
-    for (let i = x - 1; i >= 1; i--){
-       x = x * i;
+    if(x==1){
         console.log(x);
+    } else {
+        for (let i = x - 1; i >= 1; i--){
+            x = x * i;
+             console.log(x);
+         }
     }
 }
  
@@ -115,7 +119,6 @@ function question5() {
 function question6() {
     let x = "#";
     let y = " ";
-
     
     for (let i = 0; i <= 7; i++){
         if(i % 2){
