@@ -1,0 +1,18 @@
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.inline {
+    display: inline;
+}
+
+div {
+    margin: 1em 0;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 16px;
+}
