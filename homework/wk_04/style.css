@@ -1,0 +1,67 @@
+body {
+    font-family: 'VT323', monospace;
+    background-color: #000;
+    color: #fff;
+    height: 100%;
+}
+
+div, p, h1, h2, h3, h4, h5 {
+    color: #fff;
+}
+.inline {
+    display: inline;
+}
+
+.container {
+    min-height: 90vh;
+
+  /* Equal to height of footer */
+  /* But also accounting for potential margin-bottom of last child */
+  margin-bottom: -50px;
+}
+
+.question-section {
+    /*margin: 1em 0;*/
+    /* position: absolute;
+    top: 92%;
+    left: 4%;
+    width: 100%; */
+    margin-top: 64px;
+    margin-left: 8%;
+    height: 50px;
+}
+
+.question_field {
+    width:84%;
+}
+
+.chatbot-title {
+    display: flex;
+    justify-content: center;
+}
+
+.class-details {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.chatbot-btn {
+    font-family: 'VT323', monospace;
+    background-color: transparent;
+    border-radius: 0;
+    padding: 4px;
+    font-size: 16px;
+    color: #fff;
+    border: 2px solid #fff;
+    outline: none;
+}
+
+.gen-question,.gen-answer {
+    font-size: 24px;
+    margin: 4px;
+}
+
+.gen-answer {
+    text-align: right;
+    color: #00FF00;
+}
