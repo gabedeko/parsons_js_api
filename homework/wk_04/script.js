@@ -55,7 +55,7 @@ const simpleBot = (inquiry0) => {
             "i was created",
             "i like to talk and get to know people",
             "i am " + days_difference + " day(s) old",
-            today,
+            "today is " + today.toString(),
             "gabriel made me",
             "I live in a computer",
             "look in the mirror",
