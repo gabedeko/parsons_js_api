@@ -17,7 +17,6 @@ btn1.addEventListener('click', function () {
 });
 */
 
-
 const simpleBot = (inquiry0) => {
     //set variables for dates
     let today = new Date();
@@ -26,7 +25,6 @@ const simpleBot = (inquiry0) => {
 
     let days_difference = Math.round(Math.abs((creation_date - today) / one_day));
 
-    //console.log(inquiry0.sayHello());
     console.log(inquiry0);
 
     function chatBot(inquiry0) {
@@ -81,16 +79,18 @@ const simpleBot = (inquiry0) => {
             "yo no se",
             "is that a question?"
         ],
-        this.sayHello = function(x) {
+        this.sayHello = function() {
             let z = 0;
+
+            let replaceThis = "John";
+            let re = new RegExp(`\\b${replaceThis}\\b`, 'gi');
 
             console.log(this.Questions.length);
 
-            //console.log(inquiry);
-            //console.log("Hello my name is " + this.Name);
             for (let o of this.Questions) {
-                //console.log(o);
-                if (o == inquiry0) { 
+
+                //old if - if (o == inquiry0) { 
+                if (inquiry0.match(new RegExp(`\\b${o}\?\\b`, 'gi'))) { 
                     // if the first index (the question) matches the argument, then return the 2nd index (answer)
                     //return this.Answers[this.z];
                     console.log(this.Answers[z]);
@@ -159,15 +159,11 @@ const simpleBot = (inquiry0) => {
 
                     break;
                 }
-               }
+            }
         }
     };
-
-
-    //console.log(inquiry0.sayHello());
     
     const response0 = new chatBot(inquiry0);
     
     console.log(response0.sayHello(inquiry0));
-    
 }
