@@ -1,0 +1,21 @@
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.inline {
+  display: inline;
+}
+
+div {
+  margin: 1em 0;
+}
+
+.conversation-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.ex6-form {
+  display:inline;
+}

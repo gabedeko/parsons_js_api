@@ -1,0 +1,64 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The Parsons Web Project - Forms</title>
+  <meta name="description" content="F21: Class 6">
+  <meta name="author" content="Parsons">
+
+  <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+  <header></header>
+
+  <section>
+
+    <!-- this is a test h1 block -->
+    <h1 id="title">
+      "Main Title"
+    </h1>
+
+    <!-- this is a test form block -->
+    <h2>Below is a New Form</h2>
+
+  <form name="search" action="https://www.google.com/search" id="searchForm" method="GET">
+    <!--label for="SearchBox">Type your search term here</label-->
+    <input type="text" name="searchBox" id="SearchBox1" placeholder="parsons" data-validate="true" >
+
+    <label for="searchType">Select your search type:</label>
+    <select name="searchType" id="searchType">
+        <option value="">Select one</option>
+        <option value="quick">Quick Search</option>
+        <option value="detail">Detailed Search</option>
+    </select>
+
+      <label for="searchArea">Fields to search in:</label>
+      <label><input type="checkbox" name="searchArea" value="local" required-field>Local Sites</label>
+      <label><input type="checkbox" name="searchArea" value="wide" required-field>Wide Sites</label>
+      <label><input type="checkbox" name="searchArea" value="global" required-field>Global Sites</label>
+
+
+    <label>Select your search location:</label>
+    <label><input type="radio" name="searchScope" value="inside">Inside Site</label>
+    <label><input type="radio" name="searchScope" value="outside">Outside Site</label>
+
+      <label for="SearchPass">What's your age:</label>
+      <input type="number" name="searchAge" id="SearchAge" required-field>
+      <input type="date" name="dateEvent" id="dateEvent" required-field>
+
+  <textarea>this is a test</textarea>
+
+    <button type="submit">Search</button>
+
+  </form>
+
+  </section>
+
+  <script src="js/scripts.js"></script>
+</body>
+</html>
+
