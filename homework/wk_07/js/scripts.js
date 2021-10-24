@@ -67,7 +67,7 @@ function getUserData() {
 // Spotify Fetch Get
 
 //const form = document.getElementById('createUser');
-const form = document.getElementById('Spotify');
+const form = document.getElementById('getSpotifyPlaylists');
 
 
 
@@ -75,8 +75,8 @@ const form = document.getElementById('Spotify');
 //button2.addEventListener("click", getSoundcloudData);
 
 const APIController = (function(){
-  const clientId = '5381e2f5f33649a381e338b8e00e5fa9';
-  const clientSecret = 'b63809b8828d482b9287aff823a04616';
+  const clientId = '';
+  const clientSecret = '';
 
   const _getSpotifyTokens = async () => {
 
@@ -95,11 +95,11 @@ const APIController = (function(){
           })
 
           const data  = await response.json();
-          console.log(data);
+          //console.log(data);
           return data.access_token;
 
   }
-
+  /*
   const _getGenres = async (token) => {
 
     const result = await fetch(`https://api.spotify.com/v1/browse/categories?locale=sv_US`, {
@@ -110,7 +110,7 @@ const APIController = (function(){
     const data = await result.json();
     return data;
   }
-
+  */
   const _getPlaylists = async (token, userId) => {
 
     let _userId = userId;
@@ -128,9 +128,11 @@ const APIController = (function(){
     getSpotifyToken() {
       return _getSpotifyTokens();
     },
+    /*
     getGenres(token) {
       return _getGenres(token);
     },
+    */
     getPlayLists(token, userId) {
       return _getPlaylists(token, userId);
     }
@@ -161,22 +163,35 @@ const UIController = (function() {
         }
       },
       // need methods to create select list option
+      /*
       createGenre(text, value) {
         const html = `<option value="${value}">${text}</option>`;
         document.querySelector(DOMElements.selectGenre).insertAdjacentHTML('beforeend', html);
       },
-      createPlaylist(name, link, image) {
-        console.log(image);
+      */
+      createPlaylist(name, link, image, total) {
+        //console.log(image);
 
         if( image.length == 0 || image === undefined ) {
-          const html = `<p class="playlist-name" value="${name}">${name}</p>`
-          + `<p class="playlist-name" value="${link}">${link}</p>`;
+
+          const html = `<a href="${link}" target="_blank" class="playlist-item-container" style="background-image:url(imgs/records.jpg);">`
+          + `<div class="playlist-item">`
+          + `<h1 class="playlist-title" value="${name}">${name}</h1>`
+          + `<h4 class="playlist-total-tracks">Total Tracks - ${total}</h4>`
+          + `<h3 class="playlist-link" >Listen to Playlist</h3>`
+          + `</div>`
+          + `</a>`;
+
           document.querySelector(DOMElements.getPlaylist).insertAdjacentHTML('beforeend',html);
         } else {
-          const html = `<p class="playlist-name" value="${name}">${name}</p>`
-          + `<p class="playlist-name" value="${link}">${link}</p>`
-          + `<p class="playlist-name" value="${image[0].url}">${image[0].url}</p>`
-          + `<img src="${image[0].url}" class="playlist-name" value="${image[0].url}"/>`;
+          const html = `<a href="${link}" target="_blank" class="playlist-item-container" style="background-image:url(${image[0].url});">`
+          + `<div class="playlist-item">`
+          + `<h1 class="playlist-title" value="${name}">${name}</h1>`
+          + `<h4 class="playlist-total-tracks">Total Tracks - ${total}</h4>`
+          + `<h3 class="playlist-link">Listen to Playlist</h3>`
+          + `</div>`
+          + `</a>`;
+
           document.querySelector(DOMElements.getPlaylist).insertAdjacentHTML('beforeend',html);
         }
         
@@ -197,6 +212,7 @@ const APPController = (function(UICtrl, APICtrl) {
   // get input field object ref
   const DOMInputs = UICtrl.inputField();
 
+  /*
   const loadGenres = async () => {
     //get token
     ;
@@ -216,13 +232,15 @@ const APPController = (function(UICtrl, APICtrl) {
     //   //UICtrl.createGenre(element.name, element.id)
     // }
   }
+  */
 
   DOMInputs.submit.addEventListener('click', async (e) => {
     // prevent page reset
     e.preventDefault();
 
     // get token
-    const token = UICtrl.getStoredToken().token;
+    //const token = UICtrl.getStoredToken().token;
+    const token = await APICtrl.getSpotifyToken();
 
     // get user ID
     const userId = form.user_id.value;
@@ -230,24 +248,15 @@ const APPController = (function(UICtrl, APICtrl) {
     const playlist = await APICtrl.getPlayLists(token, userId);
 
     //create playlist for each item in JSON in UI
-    //console.log(playlist.items[0].images[0].url);
+    console.log(playlist);
 
-    const promise1 = Promise.resolve(3);
-  const promise2 = new Promise((resolve, reject) => setTimeout(reject, 100, 'foo'));
-  const promises = [promise1, promise2];
-
-  Promise.allSettled(promises).
-    then(playlist.items.forEach(element => UICtrl.createPlaylist(element.name, element.href, element.images)));
-
-    
-
-
+    playlist.items.forEach(element => UICtrl.createPlaylist(element.name, element.external_urls.spotify, element.images, element.tracks.total))
   });
 
   return {
     init() {
       console.log('App is starting');
-      loadGenres();
+      //Genres();
     }
   }
   
