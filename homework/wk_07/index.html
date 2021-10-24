@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>The Parsons Web Project - Ajax</title>
+  <title>Javacript API Midterm</title>
   <meta name="description" content="Class 7: Ajax">
   <meta name="author" content="Parsons">
 
@@ -25,11 +25,13 @@
     <!-- this is a test form block -->
     <h2>Below is a New Ajax Block</h2>
 
-    <button id="GetUsers">Request Users List</button>
-    <button id="GetUsersData">Generate USers List</button>
+    <!--button id="GetUsers">Request Users List</button>
+      <button id="GetUsersData">Generate Users List</button>
+      <button id="GetUsersCallback">Get users callback </button>
+      <button id="getSoundCloudData">Get Soundcloud Data </button-->
 
 
-    <form name="createUser" action="#" id="createUser">
+    <!--form name="createUser" action="#" id="createUser">
       <label for="SearchBox">Type your first name here:</label>
       <input type="text" name="first_name" id="firstName">
 
@@ -37,7 +39,32 @@
       <input type="text" name="last_name" id="lastName">
 
       <button type="submit">Search</button>
-    </form>
+    </form-->
+
+    <form name="Spotify" action="" id="Spotify">
+      <input type="hidden" id='hidden_token'>
+
+      <label for="SearchBox">Enter user ID:</label>
+      <input type="text" name="user_id" id="userId">
+
+      <div class="col-sm-6 form-group row mt-4 px-0">
+          <label for="Genre" class="form-label col-sm-2">Genre:</label>
+          <select name="" id="select_genre" class="form-control form-control-sm col-sm-10">
+              <option>Select...</option>                    
+          </select>
+      </div>
+      <div class="col-sm-6 form-group row px-0">
+          <label for="Genre" class="form-label col-sm-2">Playlists:</label>
+          <select name="" id="select_playlist" class="form-control form-control-sm col-sm-10">
+              <option>Select...</option>                    
+          </select>
+      </div>                  
+      <div class="col-sm-6 row form-group px-0">
+          <button type="submit" id="btn_submit" class="btn btn-success col-sm-12">Get Playlists</button>
+      </div>          
+  </form>
+  
+  <div id="get_playlist"></div>
 
     <div id="Output"></div>
     <ul id="userList"></ul>
