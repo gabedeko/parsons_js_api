@@ -1,0 +1,46 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Spotify User Playlist Aggregator</title>
+  <meta name="description" content="Class 7: Ajax">
+  <meta name="author" content="Parsons">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <section>
+    <form name="getSpotifyPlaylists" action="" id="getSpotifyPlaylists" class="spotify-playlist-form">
+      <div class="header-left">
+        <input type="hidden" id='hidden_token'>
+
+        <label for="SearchBox">Enter user ID:</label>
+        <input type="text" name="user_id" id="userId" class="user-id-input">
+                    
+        <button type="submit" id="btn_submit" class="playlist-btn">Get Playlists</button>        
+      </div>
+      <div class="header-right">
+        <h5 class="header-title">Gabriel Dekoladenu - Web Advanced JS - Fall 2021 - Midterm</h5>
+      </div>
+    </form>
+
+    <h1 class="page-title">Spotify User Playlist Aggregator</h1>
+    
+    <div class="content-container">
+      <div id="get_playlist" class="get-playlist"></div>
+    </div>
+    <div id="get_playlist"></div>
+  </section>
+
+  <script src="js/scripts.js"></script>
+</body>
+</html>
+
