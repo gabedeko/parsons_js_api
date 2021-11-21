@@ -1,0 +1,308 @@
+html {
+    //font: $font-style $font-variant $font-weight #{$font-size}/#{$line-height} $font-family;
+    body {
+      font-family: $font-family;
+      color: $font-color; 
+      margin: 0;
+    }
+  }
+
+
+  
+.main {
+  height: 100%;
+  //min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  position: fixed;
+  justify-content: space-evenly;
+
+  .main-left {
+    height: 100%;
+    min-height: 100vh;
+    width: 100%;
+    background-color: $s-grey;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    
+    .s-profile-box {
+      background-color: rgba(0,0,0,.4);
+      height: 50vh;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      
+
+      .s-profile-box-left {
+        height: 100%;
+        width: 100%;
+        background-image:url('https://source.unsplash.com/random');
+        background-size: cover;
+        background-position: 50% 50%;
+
+        .profile-username {
+          height: 100%;
+          width: 100%;
+          background-color: rgba(0,0,0,.4);
+          color: $s-white;
+          font-size: 64px;
+
+          h1 {
+            margin: 0;
+          }
+        }
+      }
+      .s-profile-box-right {
+        padding: 16px;
+        color: $s-white;
+        height: 100%;
+        width: 100%;
+      }
+      
+    }
+  }
+  .main-right {
+    background-color: $s-black;
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    position: relative;
+    overflow: auto;
+
+    // .right-header {
+    //   position: absolute;
+    // }
+    .top-tracks-section {
+      height: 100vh;
+      max-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+
+      .top-tracks-item {
+        height: 15%;
+        width: 100%;
+        background-color: $s-black;
+        color: $s-white;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        border-top: 2px solid $s-dark;
+        border-bottom: 2px solid $s-dark;
+
+        .top-track-num {
+
+        }
+        .top-track-art {
+          height: 100%;
+          width: 150px;
+          .track-art {
+            height: 100%;
+            width: 100%;
+            background-image:url('https://source.unsplash.com/random');
+            background-size: cover;
+            background-position: 50% 50%;
+          }
+        }
+        .top-track-names {
+          
+        }
+        .top-track-album {
+          
+        }
+        .top-track-time {
+          
+        }
+        .top-track-more {
+          
+        }
+      }
+    }
+    .top-artist-section {
+      height: 100vh;
+      width: 100%;
+      max-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+
+      .top-artist-item {
+        height: 15%;
+        width: 100%;
+        background-color: $s-black;
+        border-top: 2px solid $s-dark;
+        border-bottom: 2px solid $s-dark;
+
+        height: 100%;
+        width: 100%;
+        position: relative;
+        background-image:url('https://source.unsplash.com/random');
+        background-size: cover;
+        background-position: 50% 50%;
+
+        .top-artist-title {
+          position: absolute;
+          background-color: rgba(0,0,0,0.6);
+          color: $s-white;
+          height: 100%;
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          
+        }
+      }
+    }
+    .playlist-section {
+      height: 100vh;
+      max-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+
+      .playlist-item {
+        height: 15%;
+        width: 100%;
+        background-color: $s-black;
+        border-top: 2px solid $s-dark;
+        border-bottom: 2px solid $s-dark;
+        position:relative;
+        
+        .playlist-title {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          color: $s-white;
+          background-color: rgba(0,0,0,.7);
+          display:flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .playlist-imgs {
+          
+          display: flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+          height: 100%;
+          .playlist-img {
+            background-image:url('https://source.unsplash.com/random');
+            background-size: cover;
+            background-position: 50% 50%;
+            height: 100%;
+            width: 25%;
+          }
+        }
+      }
+    }
+    .recent-artist-section {
+      height: 100vh;
+      width: 100%;
+      max-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+
+      .recent-artist-item {
+        height: 15%;
+        width: 100%;
+        background-color: $s-black;
+        border-top: 2px solid $s-dark;
+        border-bottom: 2px solid $s-dark;
+
+        height: 100%;
+        width: 100%;
+        position: relative;
+        background-image:url('https://source.unsplash.com/random');
+        background-size: cover;
+        background-position: 50% 50%;
+
+        .recent-artist-title {
+          position: absolute;
+          background-color: rgba(0,0,0,0.6);
+          color: $s-white;
+          height: 100%;
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          
+        }
+      }
+    }
+    .followers-section {
+      height: 100vh;
+      width: 100%;
+      max-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly; 
+      .followers-item {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        .follower-img {
+          height: 100%;
+          width: 50%;
+          background-image:url('https://source.unsplash.com/random');
+          background-size: cover;
+          background-position: 50% 50%;
+          .follower-img-shade {
+            background-color: rgba(0,0,0,0.6);
+            height: 100%;
+            width: 100%;
+          }
+        }
+        .follower-name {
+          width: 50%;
+          color: $s-white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+    .following-section {
+      height: 100vh;
+      width: 100%;
+      max-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly; 
+      .following-item {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        .following-img {
+          height: 100%;
+          width: 50%;
+          background-image:url('https://source.unsplash.com/random');
+          background-size: cover;
+          background-position: 50% 50%;
+          .following-img-shade {
+            background-color: rgba(0,0,0,0.6);
+            height: 100%;
+            width: 100%;
+          }
+        }
+        .following-name {
+          width: 50%;
+          color: $s-white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
