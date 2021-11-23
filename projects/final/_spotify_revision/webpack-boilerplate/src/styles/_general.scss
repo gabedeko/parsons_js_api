@@ -4,6 +4,7 @@ html {
     font-family: $font-family;
     color: $font-color; 
     margin: 0;
+    position: relative;
   }
 }
 
@@ -77,6 +78,7 @@ justify-content: space-evenly;
     }
     .s-profile-box-btm {
       height: 50%;
+      background-color: $s-grey;
       .section-container {
         height: 100%;
         width: 100%;
