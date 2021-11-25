@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "title": "king arthur",
+    "description": "king",
+    "students": [
+      "app dsd"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "rob kendal",
+    "description": "code fiddler",
+    "students": []
+  },
+  {
+    "id": 3,
+    "title": "teresa may",
+    "description": "brexit destroyer",
+    "students": []
+  },
+  {
+    "id": 4,
+    "title": "Web ADvanced JS Class",
+    "description": "We will learn more.",
+    "students": []
+  },
+  {
+    "id": 5,
+    "title": "Web ADvanced JS Class",
+    "description": "We will learn more.",
+    "students": []
+  },
+  {
+    "id": 6,
+    "title": "Web ADvanced JS Class",
+    "description": "We will learn more.",
+    "students": []
+  },
+  {
+    "id": 7,
+    "title": "Tenshan",
+    "description": "This ia test 2021",
+    "students": []
+  }
+]

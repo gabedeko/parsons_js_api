@@ -12,8 +12,8 @@ const form = document.getElementById('getSpotifyPlaylists');
 
 // API controller for handling calls
 const APIController = (function(){
-  const clientId = 'aeae6c544bca4faba95c898249003e50'; // Remove from repo for security purposes
-  const clientSecret = 'acd66769651f491f8e45855f6f0f43ec'; // Remove from repo for security purposes
+  const clientId = ''; // Remove from repo for security purposes
+  const clientSecret = ''; // Remove from repo for security purposes
 
   // call for Spotify token authentication
   const _getSpotifyTokens = async () => {
