@@ -1,0 +1,10 @@
+//All SCSS files connect here, and this file connects to index.js
+
+/** UTILS **/
+@import './utils/settings';
+@import './utils/misc';
+
+
+//Components
+@import './components/general';
+@import './components/popup';   

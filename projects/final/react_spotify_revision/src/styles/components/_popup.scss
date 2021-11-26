@@ -1,0 +1,35 @@
+.popup-container {
+    z-index: 1;
+    position: absolute;
+    height: 400px;
+    width: 400px;
+    background-color: $s-dark;
+    left:50%; 
+    margin-top: 25%; 
+    transform: translate(-50%, -50%);
+    .popup-content {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .popup-header {
+            background-color: $s-green;
+            color: $s-white;
+            .popup-title {
+                text-align: center;
+            }
+        }
+        .popup-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            color: $s-white;
+
+            .user-info-input {
+                padding: 8px 40px;
+            }
+        }
+    }
+}
