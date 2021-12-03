@@ -1,0 +1,65 @@
+.main-mid {
+    background-color: $s-black;
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    position: relative;
+    overflow: auto;
+}
+
+.playlist-tracks-section {
+    height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    .playlist-tracks-item {
+        
+      height: 15%;
+      width: 100%;
+      background-color: $s-black;
+      color: $s-white;
+      
+      border-top: 2px solid $s-dark;
+      border-bottom: 2px solid $s-dark;
+        .playlist-item-bg {
+            background-color: rgba(0,0,0,.7);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            transition: background-color ease-in-out .3s;
+            .playlist-track-num {
+
+            }
+            .playlist-track-art {
+                height: 100%;
+                width: 150px;
+                .track-art {
+                height: 100%;
+                width: 100%;
+                //background-image:url('https://source.unsplash.com/random');
+                background-size: cover;
+                background-position: 50% 50%;
+                }
+            }
+            .playlist-track-names {
+                
+            }
+            .playlist-track-album {
+                
+            }
+            .playlist-track-time {
+                
+            }
+            .playlist-track-more {
+                
+            }
+            &:hover {
+                background-color: rgba(0,0,0,.4);
+                transition: background-color ease-in-out .3s;
+            }
+        }
+    }
+  }

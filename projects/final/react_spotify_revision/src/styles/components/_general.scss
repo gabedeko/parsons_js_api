@@ -38,7 +38,7 @@ html {
     .s-profile-box {
       background-color: rgba(0,0,0,.4);
       height: 100%;
-      width: 50%;
+      width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
@@ -51,7 +51,7 @@ html {
       .s-profile-box-top {
         height: 50%;
         width: 100%;
-        background-image:url('https://source.unsplash.com/random');
+        //background-image:url('https://source.unsplash.com/random');
         background-size: cover;
         background-position: 50% 50%;
   
@@ -94,7 +94,7 @@ html {
     .clip-container {
       z-index: 0;
       height: 100%;
-      width: 50%;
+      width: 100%;
       background-color: $s-dark;
   
       // background-size: cover;
@@ -103,9 +103,10 @@ html {
   
       iframe {
         position: relative;
-        width: 100vw;
+        width: 100%;
         height: 100%;
-        right: 40vw;
+        border: none;
+        //right: 40vw;
       }
     }
   }
@@ -202,14 +203,14 @@ html {
       }
     }
     .playlist-section {
-      height: 100vh;
-      max-height: 100vh;
+      height: auto;
+      //max-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
   
       .playlist-item {
-        height: 15%;
+        height: calc(100vh/2.5);
         width: 100%;
         background-color: $s-black;
         border-top: 2px solid $s-dark;
@@ -225,6 +226,7 @@ html {
           display:flex;
           justify-content: center;
           align-items: center;
+          transition: background-color ease-in-out .3s;
         }
         .playlist-imgs {
           
@@ -237,7 +239,13 @@ html {
             background-size: cover;
             background-position: 50% 50%;
             height: 100%;
-            width: 25%;
+            width: 100%;
+          }
+        }
+        &:hover {
+          .playlist-title {
+            background-color: rgba(0,0,0,.4);
+            transition: background-color ease-in-out .3s;
           }
         }
       }
@@ -345,4 +353,19 @@ html {
       }
     }
   }
+  }
+
+  .profile-box-link {
+    color: #fff;
+    font-size:20px;
+    transition: color ease-in-out .3s;
+    &:hover {
+      color: $s-green;
+      transition: color ease-in-out .3s;
+    }
+  }
+
+  .clip-container {
+    height: 100%;
+    width: 100%;
   }
