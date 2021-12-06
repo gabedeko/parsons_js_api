@@ -64,10 +64,12 @@ html {
   
           .profile-username {
             margin: 0;
+            margin-left: 16px;
             font-size: 56px;
           }
   
           .mobile-details {
+            margin-left: 16px;
             /*
             @media (min-width: 992px) {
               display: none;
@@ -368,4 +370,30 @@ html {
   .clip-container {
     height: 100%;
     width: 100%;
+  }
+
+  .app-header {
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    z-index: 10;
+    right: 20px;
+    top:8px;
+    height:32px;
+    width:32px;
+    .refresh-btn {
+      height: 100%;
+      width: 100%;
+      background-image: url("../../assets/imgs/close.svg");
+      background-size: 80%;
+      background-repeat: no-repeat;
+    }
+    &.reveal-close {
+      display: block;
+    }
+    &:hover {
+      .refresh-btn {
+        background-image: url("../../assets/imgs/close_hover.svg");
+      }
+    }
   }

@@ -23,6 +23,7 @@ function PopUp(props) {
     props.onSubmit(formData);
 
     document.querySelector(".popup-container").classList.add('hide-popup');
+    document.querySelector(".app-header").classList.add('reveal-close');
     //console.log('you said ', formData);
     // ... submit to API or something
 
