@@ -5,15 +5,16 @@ import { Credentials } from './credentials'
 
 function MainMid(props) {
     
+  //Declase usestate to only run useEffect once to prevent issue
   const [mounted, setMounted] = useState(false);
+  //get API credentials
   const spotify = Credentials();
-
-
-
+  //set HTML ID as DOMElement variable
   const DOMElements = {
     playlistTrackSection: '#playlist-tracks-section',
   }
 
+//Only runs when playlistResponse is changed
 useEffect(() => {
   if (!mounted) {
     setMounted(true);

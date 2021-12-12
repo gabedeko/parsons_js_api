@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react' 
 
+//recent artist section design - unused
 function RecentArtist() {
 
   return (

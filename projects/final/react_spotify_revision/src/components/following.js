@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react' 
 
+//Following section design - unused
 function Following() {
 
   return (

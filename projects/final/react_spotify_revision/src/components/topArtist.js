@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react' 
 
+//top artist section design - unused
 function TopArtist() {
 
   return (

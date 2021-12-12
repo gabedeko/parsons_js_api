@@ -7,19 +7,18 @@ import records from '../assets/imgs/records.jpg'
 
 function Playlist(props, {sendDataToParent}) {
 
+  //Get API credentials
   const spotify = Credentials();
 
-  //const [mounted, setMounted] = useState(false);
-
-  const [singlePlaylist, setSinglePlaylist] = useState([]);
-
+  //set HTML ID as DOMElement variable
   const DOMElements = {
     playlistSection: '#playlist-section',
   }
 
+  //For each playlist the user has, create HTML for it
   props.playlistResponse.forEach((element, index)=> {
+    
     //console.log("This is from playlist " + element.images[0].url);
-
     if(  element.images === undefined || element.images == 0 ) {
 
       const html = `<div playlistId="${element.id}" class="playlist-item">`
@@ -46,39 +45,6 @@ function Playlist(props, {sendDataToParent}) {
       document.querySelector(DOMElements.playlistSection).insertAdjacentHTML('beforeend',html);
     }
     
-    
-
-  
-      //https://api.spotify.com/v1/playlists/6BktQjwuB2zGCln2FQ2eXY
-      /*
-      axios(`https://api.spotify.com/v1/playlists/${element.id}`, {
-          method: 'GET',
-          headers: { 
-            'Accept': 'application/json',
-            'Content-Type' : 'application/json',
-            'Authorization' : 'Bearer ' + props.sessionToken
-          }
-        })
-        .then (getSinglePlaylistResponse => {
-
-          
-          
-          console.log(getSinglePlaylistResponse.data);  
-
-          playListArray.push(getSinglePlaylistResponse.data);
-          
-          console.log(getSinglePlaylistResponse.data.name);
-          
-          setSinglePlaylist (
-            singlePlaylist.push({
-              title: getSinglePlaylistResponse.data.name,
-              date: `2021-09-0${index}`,
-            })
-          )
-          
-          console.log(singlePlaylist);
-        })
-      */
   });
 
   return (

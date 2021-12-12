@@ -1,5 +1,7 @@
 import React, { useState, useContext } from 'react'
 
+
+//Header functions as a refresh page function onClick
 function Header() {
 
  function refreshPage(e) {

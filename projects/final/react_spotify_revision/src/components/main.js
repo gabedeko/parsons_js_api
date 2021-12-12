@@ -7,20 +7,18 @@ import MainRight from '../components/mainRight'
 import axios from 'axios'
 import { Credentials } from './credentials'
 
+//Main component that contains most other components
 function Main(props) {
 
+  //Declase usestate to only run useEffect once to prevent issue
   const [mounted, setMounted] = useState(false);
-
-
+  //get API credentials
   const spotify = Credentials();
-  //console.log('client id in main is ' + spotify.ClientId);
 
-  const [token, setToken] = useState('');
-
-  //console.log("the sessionToken in main.js is " + props.sessionToken);
-
+  //Declase useState for playlist array
   const [playlists, setPlaylists] = useState([]);
   
+  //Only runs when sessionToken is changed
   useEffect(() => {
     if (!mounted) {
       setMounted(true);
@@ -42,14 +40,8 @@ function Main(props) {
 
         setPlaylists(getPlaylistResponse.data.items);
 
-        
       })
   }, [props.sessionToken])
-
-
-  //let hmm = parentToChild;
-
-  //console.log("this is from the main page " + hmm);
 
   return (
     <div id='main-section' className="main">

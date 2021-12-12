@@ -4,34 +4,31 @@ import Header from '../components/header'
 import Main from '../components/main' 
 import PopUp from '../components/popUp' 
 
+//Profile Page
 const Profile = props => {
 
-    
+    //Declause useState for submitted user
     const [data, setUser] = React.useState({submittedUser: '', setSubmittedUser: []});
 
-    //console.log("this is from the profile page " + props.selectedValue);
-
-    //console.log('the session token is ' + props.sessionToken);
-
+    //When form is submitted run functions within onSubmit
     function onSubmit(formState) {
-        console.log('Your form entry' + formState.user_id);
-        
+        //console.log('Your form entry' + formState.user_id);
         parentToChild(formState.user_id);
         sendDataRoot(formState.user_id);
     }
 
+    //send data from profile to Main
     const parentToChild = val => {
         setUser({
             submittedUser: val
         });
     }
 
+    //send data from popPup to Root(app.js)
     function sendDataRoot(val) {    
         props.onSubmitRoot(val);
     
-        //console.log('you said ', formData);
-        // ... submit to API or something
-    
+        //console.log('you said ', formData);    
       }
         
     return (

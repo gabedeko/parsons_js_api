@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react' 
 
+//Followers section design - unused
 function Followers() {
 
   return (

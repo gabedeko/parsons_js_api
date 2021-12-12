@@ -4,19 +4,21 @@ import { Credentials } from './credentials'
 
 function ProfileBox(props) {
 
+  //Only runs when sessionToken is changed, or run once to mount
   const [mounted, setMounted] = useState(false);
-  const [gif, setGif] = useState('');
 
+  //set HTML ID as DOMElement variable
   const DOMElements = {
     profileBox: '#s-profile-box',
   }
 
+  //Only runs hen playlistResponse is changed
   useEffect(() => {
     if (!mounted) {
       setMounted(true);
       return;
     }
-
+    //API call for first playlist in array
     axios(`https://api.spotify.com/v1/playlists/${props.playlistResponse[0].id}`, {
           method: 'GET',
           headers: { 
@@ -29,7 +31,7 @@ function ProfileBox(props) {
 
       let artist_name = getSinglePlaylistResponse.data.tracks.items[1].track.artists[0].name;
       console.log("artist name - " + artist_name);
-
+    //API call for GIF which searches the artist's name
     axios(`http://api.giphy.com/v1/gifs/search?q=music+${artist_name}&api_key=qOntlWq9Jt5KNQDn0wzCNgKPbmsio60r&limit=5`, {
       method: 'GET',
       headers: { 
@@ -38,19 +40,15 @@ function ProfileBox(props) {
       }
     })
     .then (giphyResponse => {
-      //document.getElementById("Output").innerHTML = JSON.stringify(resp.results);
-      //buildUserData( resp.results );
-
-      //console.log(giphyResponse);
-      //console.log(giphyResponse.data.data[0].embed_url);    
-
+    //buildUserData( resp.results );
+    //console.log(giphyResponse);
     //console.log("from profileBox " + props.setUser.display_name);
-    //console.log("from profileBox " + props.setUser.images[0].url);
 
+    //Create html content from user profile data
     if(  props.setUser.images === undefined || props.setUser.images == 0 ) {
       const html = `<div class="s-profile-box-top s-profile-img" style="background-image:url('https://source.unsplash.com/random')">`
       + `<div class="profile-details">`
-      + `<h1 class="profile-username">#${props.setUser.display_name}</h1>`
+      + `<h1 class="profile-username">${props.setUser.display_name}</h1>`
       + `<div class="mobile-details">`
       + `<h3>Public Playlists - ${props.playlistTotal}</h3>`
       + `<h3>Followers - ${props.setUser.followers.total}</h3>`
@@ -85,22 +83,16 @@ function ProfileBox(props) {
       document.querySelector(DOMElements.profileBox).insertAdjacentHTML('beforeend',html);
     }
 
-  })
-  .catch(function(error) { 
-    //document.getElementById("Output").innerHTML = "There was an error "+error;
-    console.log("There was an error " + error);
-  });
+    })
+    .catch(function(error) { 
+      console.log("There was an error " + error);
+    });
 
-  })
+    })
 
   }, [props.playlistResponse])
-
-
-
-  //console.log("this is from profilebox.js " + props.submittedUser);
-
   
-  
+  //All code above essential renders here
   return (
     <div id="s-profile-box" className="s-profile-box"> 
         
