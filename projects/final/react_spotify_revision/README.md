@@ -4,4 +4,4 @@
 ![](https://drive.google.com/uc?export=view&id=1wFs2u-8cmFik0wpYv0Q64I12JDoGYDpH)
 ![](https://drive.google.com/uc?export=view&id=1NS-53PUn6ajFurXQONs4AgVFDELJiU-A)
 ![](https://drive.google.com/uc?export=view&id=1Pxmq76tE5JlHFplRalGHgR0atj7Ht7NZ)
-![](https://drive.google.com/uc?export=view&id=https://drive.google.com/file/d/1VuHZLG2ocXjN739E-mINTar2RFB3MibS/view?usp=sharing)
+![](https://drive.google.com/uc?export=view&id=1VuHZLG2ocXjN739E-mINTar2RFB3MibS)
