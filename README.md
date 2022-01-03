@@ -1,2 +1,2 @@
-[Revisioning Spotify](https://www.figma.com/proto/hUO1eQZRg7m9NtgGbbVzkI/js_api_final?node-id=1%3A18&starting-point-node-id=1%3A18)
+[Revisioning Spotify](https://github.com/gabedeko/parsons_js_api/tree/main/projects/final/react_spotify_revision)
 
